@@ -17,7 +17,7 @@ WITH raw_contributions AS (
         l_name_or_org AS donor_last_name_or_org_name,
         occupation AS donor_occupation,
         employer AS employer,
-        state as donor_state,
+        state AS donor_state,
         city AS donor_city,
         zip AS donor_zip,
         address AS donor_address,
