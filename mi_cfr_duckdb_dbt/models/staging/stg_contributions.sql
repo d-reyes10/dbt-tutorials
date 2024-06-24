@@ -1,4 +1,4 @@
-{{ config(materialized='view', location='../data/staging/stg_contributions.parquet', format='parquet') }}
+{{ config(materialized='external', location='../data/staging/stg_contributions.parquet', format='parquet') }}
 
 WITH raw_contributions AS (
     SELECT 
