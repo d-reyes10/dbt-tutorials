@@ -6,6 +6,7 @@ sudo mv duckdb /bin
 rm -rf venv
 python3.12 -m venv venv
 source venv/bin/activate
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python scaffold_folders.py
 python get_mi_cfr_data.py

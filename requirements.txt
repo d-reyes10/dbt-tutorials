@@ -6,3 +6,5 @@ pyarrow
 dbt
 dbt-duckdb
 cloudpickle
+gcloud
+dbt-bigquery
