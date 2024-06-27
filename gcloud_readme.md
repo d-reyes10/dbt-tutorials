@@ -1,4 +1,4 @@
-#Installing gcloud and access bigquery for dbt
+# Installing gcloud and access bigquery for dbt
 
 ## Run the install script
     bash install.sh
