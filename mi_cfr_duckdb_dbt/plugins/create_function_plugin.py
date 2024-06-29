@@ -4,6 +4,7 @@ from duckdb.typing import DuckDBPyType
 from dbt.adapters.duckdb.plugins import BasePlugin
 from dbt.adapters.duckdb.utils import TargetConfig
 
+from functions.check_substring import check_substring
 from functions.return_hello_array import return_hello_array
 from functions.numpy_dummy import return_numpy_one
 from functions.pydantic_example import pydantic_example
@@ -13,6 +14,7 @@ from functions.classify_expenditure import classify_expenditure
 
 class Plugin(BasePlugin):
     def configure_connection(self, conn: DuckDBPyConnection):
+        conn.create_function("check_substring", check_substring)
         conn.create_function("return_hello_array", return_hello_array)
         conn.create_function("get_substring", get_substring)
         conn.create_function("return_numpy_one", return_numpy_one)
