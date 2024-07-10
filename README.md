@@ -47,6 +47,9 @@
 #### To turn off your Python venv
     deactivate
 
+#### But turn it back on because you need to be in the Python ven for the rest of the setup instructions inclduing running dbt
+    source venv/bin/activate
+
 ### 3. Install necessary python packages
 
 #### This is as simple as:
@@ -56,16 +59,6 @@
 
 #### We need to scaffold some folders for our data project so we run:
     python scaffold_folders.py
-
-#### You can alter the NEEDED_FOLDERS variable to add folders as neccesary:
-    NEEDED_FOLDERS = [
-        './data/mart',
-        './data/ml_models',
-        './data/ml',
-        './data/raw',
-        './data/staging',
-        ...
-    ]
 
 #### We then need to get the Michigan Campaign Finance Reports data with the command below. We'll use Georgia voterfile data in the course but this is just for getting set up:
     python get_mi_cfr_data.py
@@ -77,6 +70,7 @@
 
 ## This is additional info not required for setup. Please feel free to explore the dbt file structure and additional features and docs below more. But don't worry about it too much. We'll go much more in dept on this in the course with Georgia voterfile data:
 
+
 ### Models
 
 #### We want to run these in the dbt folder so:
@@ -87,6 +81,16 @@
         > mart
         > ml
         > staging
+
+#### You can alter the NEEDED_FOLDERS variable to add folders as neccesary:
+    NEEDED_FOLDERS = [
+        './data/mart',
+        './data/ml_models',
+        './data/ml',
+        './data/raw',
+        './data/staging',
+        ...
+    ]
 
 #### Staging
 This is the folder where we interact with the raw sources. Generally this is where we rename columns to nicer names and do the base level of data munging.
