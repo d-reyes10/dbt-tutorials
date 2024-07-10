@@ -73,7 +73,7 @@
 
 ### Models
 
-#### We want to run these in the dbt folder so:
+#### We want to run these in the dbt folder so change directories if you're not already in that directory:
     cd mi_cfr_duckdb_dbt
 
 #### The models folder looks something like this
