@@ -1,11 +1,9 @@
 ## Simple Install Setup
+#### Run the Commands in the Grey Highlighted Boxes within your Codespace for /workspaces/dbt-tutorials
     bash install.sh
 
-#### You may need to change the name of your python binary:
+#### Some Python set up:
     python3.12 -m venv venv
-
-#### for example:
-    python -m venv venv
 
 ## Installation Overview
 1. Install DuckDB
@@ -16,18 +14,21 @@
 
 ### 1. Install DuckDB
 
-#### To install duckdb on windows
-    winget install DuckDB.cli
-
-#### to install duckdb on mac
-    brew install duckdb
-
-#### If you want the linux binary:
+#### We encourage everyone to work inside of the linux based Codespace and use the following commands. Each line needs to be entered separately
     wget https://github.com/duckdb/duckdb/releases/download/v1.0.0/duckdb_cli-linux-amd64.zip
     unzip duckdb_cli-linux-amd64.zip
     sudo mv duckdb /bin
 
+#### If you choose to install on your local windows environment use this commmand instead:
+    winget install DuckDB.cli
+
+#### If you choose to install on your local mac environment use this commmand instead:
+    brew install duckdb
+
 #### You can then verify it's installed by running
+    duckdb
+
+#### If that doesn't work, try
     ./duckdb
 
 ### 2. Create Python virtual environment
@@ -35,11 +36,16 @@
 #### Need to call the venv module and a place to store the virtual environment
     python -m venv venv
 
-#### Note that you may need to install the venv package for your version using apt
-    sudo apt install python3.12-venv
 
-#### When we have our virtual environment we then need to source it
+#### Ensure you have Python3.12
+    curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3.12 get-pip.py
+
+#### When we have our virtual environment we then need to source it and activate it
     source venv/bin/activate
+
+#### To turn off your Python venv
+    deactivate
 
 ### 3. Install necessary python packages
 
@@ -61,23 +67,15 @@
         ...
     ]
 
-#### We then need to get the Michigan Campaign Finance Reports data with:
+#### We then need to get the Michigan Campaign Finance Reports data with the command below. We'll use Georgia voterfile data in the course but this is just for getting set up:
     python get_mi_cfr_data.py
-
-#### like the scaffold_folders script we can change the years we want to pull down:
-    NEEDED_YEARS = [
-        2022,
-        2023,
-        2024,
-        ...
-    ]
 
 ### 5. Run dbt
 #### This one is also pretty simple
     cd mi_cfr_duckdb_dbt
     dbt run
 
-## Overview of dbt
+## This is additional info not required for setup. Please feel free to explore the dbt file structure and additional features and docs below more. But don't worry about it too much. We'll go much more in dept on this in the course with Georgia voterfile data:
 
 ### Models
 
@@ -92,9 +90,6 @@
 
 #### Staging
 This is the folder where we interact with the raw sources. Generally this is where we rename columns to nicer names and do the base level of data munging.
-
-#### Mart
-This is the folder 
 
 #### ML
 This is a special folder where I give a proof of concept of running python ML models directlyl in dbt.
