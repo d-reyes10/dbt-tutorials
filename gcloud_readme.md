@@ -1,12 +1,8 @@
 # Installing gcloud and access bigquery for dbt
 
-## Run the install script
-    bash install.sh
-
-#### This should source the virtualenv 
-#### If not:
+## Activate your virtual environment if it isn't already on
     source venv/bin/activate
-
+    
 ## Run the gcloud install script
     bash gcloud_install.sh
 
