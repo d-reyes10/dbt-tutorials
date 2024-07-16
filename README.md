@@ -68,6 +68,8 @@
     cd mi_cfr_duckdb_dbt
     dbt run
 
+################################ --- LAST STEP COMPLETED ######
+
 ## This is additional info not required for setup. Please feel free to explore the dbt file structure and additional features and docs below more. But don't worry about it too much. We'll go much more in dept on this in the course with Georgia voterfile data:
 
 
