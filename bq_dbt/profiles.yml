@@ -4,6 +4,6 @@ bq_dbt:
     dev:
       type: bigquery
       method: oauth
-      project: prod-generation-data-176bffe13
+      project: prod-generation-data-176bffe6
       dataset: GA_targetsmart
       threads: 1
