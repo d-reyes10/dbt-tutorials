@@ -173,3 +173,4 @@ This gives more explanation of calling python functions within duckdb. Super use
 #### dbt docs: [here](https://docs.getdbt.com/docs/introduction)
 #### duckdb docs: [here](https://duckdb.org/docs/index)
 #### dbt-duckdb github repo: [here](https://github.com/duckdb/dbt-duckdb)
+gloud
