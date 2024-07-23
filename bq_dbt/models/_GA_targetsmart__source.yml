@@ -8,7 +8,7 @@ sources:
       - name: voter_base
         identifier: voter_base
         columns:
-          - name: voterbase_id
+          - name: vb_vf_reg_state
             data_tests:
               - unique
               - not_null
