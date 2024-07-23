@@ -4,6 +4,6 @@ bq_dbt:
     dev:
       type: bigquery
       method: oauth
-      project: <ENTER PROJECT ID HERE>
-      dataset: <ENTER DATASET HERE>
+      project: prod-generation-data-176bffe6
+      dataset: dbt_tgriffin
       threads: 1
