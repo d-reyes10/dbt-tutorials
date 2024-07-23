@@ -16,8 +16,8 @@ sources:
             data_tests:
               - not_null
       
-      - name: status_id
-        tests:
-          - accepted_values:
-              values: ['GA']
-              quote: false
+          - name: vb_vf_reg_state
+            tests:
+              - accepted_values:
+                  values: ['GA']
+                  quote: false
