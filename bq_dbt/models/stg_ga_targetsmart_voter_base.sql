@@ -40,6 +40,8 @@ base as (
         updated_at
 
     from source 
+
+    where vb_vf_reg_state = 'GA'
 )
 
 select * from base
