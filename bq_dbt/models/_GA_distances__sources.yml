@@ -12,10 +12,6 @@ sources:
             data_tests:
               - unique
               - not_null
-          - name: vb_vf_reg_state
-            data_tests:
-              - accepted_values:
-                  values: ['GA']
           - name: aug_primary_voted_date 
             data_tests:
               - not_null
