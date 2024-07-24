@@ -15,4 +15,4 @@ sources:
           - name: vb_vf_reg_state
             data_tests:
               - accepted_values:
-                values: ['GA']
+                  values: ['GA']
