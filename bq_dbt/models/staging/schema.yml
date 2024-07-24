@@ -1,0 +1,23 @@
+# version: 2
+
+# models:
+#   - name: stg_voter_table
+#     columns:
+#       - name: voterbase_id
+#         description: "unique ID for each voter"
+#         data_tests:
+#           - unique
+#           - not_null
+
+#   - name: stg_early_ballot
+#     columns:
+#       - name: voterbase_id
+#         description: "unique ID for each voter"
+#         data_tests:
+#           - unique
+#           - not_null
+#       - name: early_ballot_method
+#         description: "method by which voter returned ballot"
+#         data_tests:
+#           - accepted_values:
+#               values: ["A","E","P", null]
