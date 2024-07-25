@@ -1,7 +1,6 @@
 ## Simple Install Setup
 #### Run the Commands in the Grey Highlighted Boxes within your Codespace for /workspaces/dbt-tutorials
     bash install.sh
-
 #### Some Python set up:
     python3.12 -m venv venv
 
