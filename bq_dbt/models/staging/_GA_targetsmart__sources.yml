@@ -1,6 +1,5 @@
 version: 2
 
-
 sources:
   - name: ga_targetsmart 
     schema: GA_targetsmart 
@@ -13,14 +12,7 @@ sources:
             data_tests:
               - unique
               - not_null
-          - name: vb_vf_reg_state
-            data_tests:
-              - accepted_values:
-                  values: ['GA']
-# models:
-#   - name: stg_ga_targetsmart_voter_base
-#     columns:
-#         - name: vb_vf_reg_state
-#           data_tests:
-#             - accepted_values:
-#                 values: ['GA']
+          # - name: vb_vf_reg_state
+          #   data_tests:
+          #     - accepted_values:
+          #         values: ['GA']

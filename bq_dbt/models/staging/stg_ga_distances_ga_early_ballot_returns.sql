@@ -1,8 +1,4 @@
-{{ config(materialized='view') }}
-
-with 
-
-source as (
+with source as (
     select * from {{ source('ga_distances', 'ga_early_ballot_returns')}}
 ),
 
