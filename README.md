@@ -42,7 +42,7 @@
     python3.12 get-pip.py
 
 #### When we have our virtual environment we then need to source it and activate it
-    source venv/bin/activate
+    source .venv/bin/activate
 
 #### To turn off your Python venv
     deactivate
