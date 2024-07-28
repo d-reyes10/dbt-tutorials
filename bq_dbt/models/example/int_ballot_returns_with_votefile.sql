@@ -3,7 +3,7 @@ with votefile as (
 )
 
 , ballot_returns as (
-    select * from {{ ref('stg_ga_distances_ga_early_ballot_returns') }}
+    select * from {{ ref('int_ballot_returns_with_votefile') }}
 )
 
 , joined as (
