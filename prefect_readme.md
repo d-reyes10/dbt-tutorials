@@ -129,7 +129,7 @@ Creating a deployment for a flow is as simple as calling `.serve()` on your flow
 # Flow code above remains the same
 
 if __name__ == "__main__":
-    run_dbt_job.serve(
+    dbt_flow.serve(
         cron="*/5 * * * *",
     )
 ```
