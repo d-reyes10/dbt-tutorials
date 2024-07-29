@@ -113,7 +113,7 @@ if __name__ == "__main__":
     run_dbt_job()
 ```
 
-Run your dbt flow by executing `python dbt_flow.py` in your terminal. Though this flow only
+Run your dbt flow by executing `python dbt_flow.py` in your terminal. Though this flow only runs your dbt job, it can easily be extended to do additional work, like calling APIs, transforming data, or running other dbt commands!
 
 ## Schedule your flow
 
