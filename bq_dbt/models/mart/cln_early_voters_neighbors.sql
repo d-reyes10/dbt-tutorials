@@ -1,31 +1,28 @@
 {{
 config(
-    materialized = 'view',
+    materialized = 'table',
 )
 }}
 
 with early_voters as (
-    select voterbase_id, st_geogpoint(vb_tsmart_longitude, vb_tsmart_latitude) ev_coordinates 
-    from {{ ref('int_ballot_returns') }}
-    where early_ballot_method is not null
+    select * from {{ ref('int_early_ballot_returns')}}
 )
 , voters as (
-    select voterbase_id, st_geogpoint(vb_tsmart_longitude, vb_tsmart_latitude) voter_coordinates, vb_tsmart_partisan_score, vb_tsmart_midterm_general_turnout_score 
-    from {{ ref('int_ballot_returns') }}
-    where early_ballot_method is null
+    select * from {{ ref('int_non_voters')}}
 )
 , voters_joined as (
     select
-        ev.voterbase_id early_voter,
+        ev.early_voter_id,
         neighbors.voterbase_id nearby_neighbor, 
         neighbors.vb_tsmart_partisan_score,
         round(
-            st_distance(ev_coordinates, voter_coordinates), 2) nearby_voter_distance
+            st_distance(early_voter_coordinates, voter_coordinates), 2) nearby_voter_distance
     from early_voters ev
-    cross join voters neighbors
+    join voters neighbors 
+        on st_dwithin(early_voter_coordinates, voter_coordinates, 3218.69)
 )
 select
-    early_voter,
+    early_voter_id,
     array_agg(
         json_object(
             'nearby_neighbor', nearby_neighbor,

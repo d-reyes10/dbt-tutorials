@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ ref('int_ballot_returns')}}
+    select * from {{ ref('int_early_ballot_returns')}}
 )
 , district_ballot_counts as (
     select
